@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SRMS | Teacher Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">SRMS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Manage Results
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#addMarksTab" data-bs-toggle="tab">Add Marks</a></li>
+              <li><a class="dropdown-item" href="#updateMarksTab" data-bs-toggle="tab">Update Marks</a></li>
+              <li><a class="dropdown-item" href="#viewMarksTab" data-bs-toggle="tab">View Marks</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container mt-5">
+    <div class="tab-content" id="resultsTabContent">
+
+      <!-- Add Marks -->
+      <div class="tab-pane fade show active" id="addMarksTab">
+        <h3 class="mb-3">Add Student Marks</h3>
+        <form id="marksForm">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="standard" class="form-label">Standard</label>
+              <select class="form-select" id="standard" required>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="exam" class="form-label">Exam</label>
+              <select class="form-select" id="exam" required>
+                <option value="first">First Term</option>
+                <option value="second">Second Term</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="roll" class="form-label">Roll Number</label>
+              <input type="number" class="form-control" id="roll" required>
+            </div>
+            <div class="col-md-6">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" required>
+            </div>
+            <div class="col-md-6">
+              <label for="marks" class="form-label">Marks</label>
+              <input type="number" class="form-control" id="marks" required>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-success">Submit Marks</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Update Marks -->
+      <div class="tab-pane fade" id="updateMarksTab">
+        <h3 class="mb-3">Update Student Marks</h3>
+        <form id="updateForm">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="u_roll" class="form-label">Roll Number</label>
+              <input type="number" class="form-control" id="u_roll" required>
+            </div>
+            <div class="col-md-4">
+              <label for="u_subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="u_subject" required>
+            </div>
+            <div class="col-md-4">
+              <label for="u_marks" class="form-label">New Marks</label>
+              <input type="number" class="form-control" id="u_marks" required>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-warning">Update Marks</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- View Marks -->
+      <div class="tab-pane fade" id="viewMarksTab">
+        <h3 class="mb-3">View Student Marks</h3>
+        <form id="viewForm">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-6">
+              <label for="v_roll" class="form-label">Roll Number</label>
+              <input type="number" class="form-control" id="v_roll" required>
+            </div>
+            <div class="col-md-6">
+              <button type="submit" class="btn btn-info">View Results</button>
+            </div>
+          </div>
+        </form>
+        <div id="viewResult" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
